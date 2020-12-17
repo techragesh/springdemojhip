@@ -1,0 +1,31 @@
+enum Gender {
+   FEMALE, MALE
+}
+
+
+entity Customer {
+    name String required minlength(2)
+    email String
+    phoneNumber String
+    gender Gender
+    dob String
+    addressLine1 String
+    addressLine2 String
+    addressLine3 String
+    addressLine4 String
+    townCity String
+    zip String
+    state String
+    country String
+    createDate Instant
+    modifiedDate Instant
+}
+
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all
+service all with serviceClass
+
+paginate Customer with pagination
